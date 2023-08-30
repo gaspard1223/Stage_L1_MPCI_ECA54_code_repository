@@ -1,10 +1,14 @@
+#Ce fichier contient les fonctions permettant de construire à partir d'un Systême de Tague un Système de Tague cyclique ayant le même comportement.
+
+
 from tag_systems import TagSystem, CyclicTagSystem
 
 ap = {"a": "bb", "b": "ac", "c": "abc"}
 m = 2
 ts = TagSystem("abc", m, ap)
 
-def encodeur(TS):
+def emulateur(TS):
+    #cette fonction prend en entrée un Tag System et renvoie L la liste des suffixes du Cyclic tag system correspondant
     encodage = {}
     alphabet = []
     L = []
@@ -23,23 +27,22 @@ def encodeur(TS):
     str = ""
     for x in TS.str:
         str += encodage[x]
-    return L, str
+    return CyclicTagSystem(str, L)
 
 
-def emulateur(TS):
-    L = encodeur(TS)[0]
-    str = encodeur(TS)[1]
-    CTS = CyclicTagSystem(str, L)
-    return CTS
-
-
+#EXEMPLE : le programme suivant entraine la création du Cyclic Tag System simulant le 2-Tague system d'alphabet [a,b,c] de mot initial abc et de fonction de transition : f(a)=bb, f(b)=ac, f(c)=abc
+Foncton_de_transition = {"a": "bb", "b": "ac", "c": "abc"}
+m = 2
+ts = TagSystem("abc", m, ap)
 cts = emulateur(ts)
 assert isinstance(cts, CyclicTagSystem)
-print(ts.str)
+print("Execution du Cyclic tag system")
 print(cts.str)
 for i in range(20):
     cts.actualisation()
     print(cts.str)
+print("Execution du tag system")
+print(ts.str)
 for i in range(20):
     ts.actualisation()
     print(ts.str)
