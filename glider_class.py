@@ -1,3 +1,5 @@
+#Ce fichier contient les objets nescessaires au fonctionnement du simulateur de glider
+
 import copy
 
 
