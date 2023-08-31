@@ -6,7 +6,7 @@ from glider_class import Glider
 
 
 W = Glider(94, 1, 0, 0, 0, "W")
-w = Glider(106, -1, 0, 0, 0, "w")
+w = Glider(105, -1, 0, 0, 0, "w")
 glider_list = [W, w]
 
 

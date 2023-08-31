@@ -1,3 +1,7 @@
+from glider_class import Ether
+from rules import ideal_rules
+
+
 from glider_class import Glider
 
 
@@ -28,3 +32,10 @@ periodic_list = [
     Glider(220, -1, 0, 0, p, "L"),
     Glider(225, -1, 0, 0, p, "n"),
 ]
+
+ether = Ether(500, (0, 200), glider_list, ideal_rules, periodic_list)
+ether.affichage()
+
+for i in range(500):
+    ether.update_ether()
+    ether.affichage()

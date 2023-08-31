@@ -5,9 +5,8 @@ from rules import rule54
 from glider_class import Glider
 
 
-W = Glider(94, 1, 0, 0, 0, "W")
-w = Glider(106, -1, 0, 0, 0, "w")
-glider_list = [W, w]
+Y = Glider(100, 0, 25, 0, 0, "c")
+glider_list = [Y]
 
 
 p = 25

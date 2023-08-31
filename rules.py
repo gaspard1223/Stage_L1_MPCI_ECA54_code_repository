@@ -180,6 +180,10 @@ def rule54(i, grille):
     elif (a, b, c) == (None, b, None):  # Règle obo
         if isinstance(b, Glider):
             return obo(b)
+        elif b == 1:
+            return Glider(i, 0, 0, 0, 0, "G")
+        elif b == 2:
+            return Glider(i, 0, 0, 0, 0, "g")
 
     elif (a, b, c) == (None, None, c):  # Règle ooc
         if isinstance(c, Glider):
@@ -194,10 +198,10 @@ def rule54(i, grille):
         if isinstance(a, Glider):
             if a.vitesse > 0 and a.phase == a.nb_phases:
                 return copy.deepcopy(a)
-            elif a.symbol == "c" and a.phase == 5 or a.phase == 13 or a.phase == 21:
+            elif a.symbol == "c" and a.phase == 5 or a.phase == 13 or a.phase == 23:
                 return Glider(i, 1, 0, 0, 0, "W")
             else:
-                return None  #############################################################################################################################
+                return None
 
     elif (a, b, c) == (a, None, c):  # Règle aoc
         if isinstance(a, Glider) and isinstance(c, Glider):
