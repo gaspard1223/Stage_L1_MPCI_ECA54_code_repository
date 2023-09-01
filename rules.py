@@ -1,3 +1,6 @@
+#Ce fichier contient les fonctions correspondant aux règles des differents systèmes simulés. Pour l'instant, il contient la règle permettant de simuler
+# leSG idéal ainsi que celle permattant de simuler les gliders de l'ECA 54
+
 import copy
 from glider_class import Glider
 
