@@ -1,3 +1,5 @@
+#Ce programme permet de simuler une collision W+w = ge (dans l'output, ge sera symbolisé par un "G")
+
 from glider_class import Ether
 from rules import rule54
 
